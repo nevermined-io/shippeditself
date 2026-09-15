@@ -1,0 +1,36 @@
+{
+  "rows": [
+    {
+      "requestId": "locus-topup-20-v1",
+      "merchant": "Locus (Build With Locus)",
+      "amountCents": 2000,
+      "feeCents": 40,
+      "status": "Settled",
+      "txHash": "0x9a9f2fcf9aaa473cfaed5f25664d42d3ea9869a375f620066833cf16dd501cee",
+      "chain": "Base"
+    },
+    {
+      "requestId": "screenshotone-hero-v1",
+      "merchant": "ScreenshotOne",
+      "amountCents": 6,
+      "feeCents": 0,
+      "status": "Settled",
+      "txHash": "0xe6d5a59a15e34f98de74955c66b0841736a27b871c2a0f484fcdf015376a65bc",
+      "chain": "Tempo"
+    }
+  ],
+  "totals": {
+    "count": 2,
+    "vendors": 2,
+    "amountCents": 2006,
+    "feeCents": 40,
+    "chains": [
+      "Base",
+      "Tempo"
+    ]
+  },
+  "stats": {
+    "capCents": 4000,
+    "spentCents": 2046
+  }
+}
