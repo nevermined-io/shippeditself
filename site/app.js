@@ -34,13 +34,22 @@
     if (!rows.length) {
       var tr = document.createElement("tr");
       var td = el("td", "receipt-empty", "No settled payments yet.");
-      td.colSpan = 6;
+      td.colSpan = 8;
       tr.appendChild(td);
       body.appendChild(tr);
       return;
     }
 
     rows.forEach(function (r) {
+      if (r.groupLabel) {
+        var gtr = document.createElement("tr");
+        gtr.className = "group-heading";
+        var gtd = el("td", null, r.groupLabel);
+        gtd.colSpan = 8;
+        gtr.appendChild(gtd);
+        body.appendChild(gtr);
+      }
+
       var tr = document.createElement("tr");
 
       var tdM = el("td", null, r.merchant);
@@ -48,7 +57,7 @@
       tr.appendChild(tdM);
 
       var tdReq = el("td", null, r.requestId);
-      tdReq.title = r.requestId;
+      tdReq.title = r.what || r.requestId;
       tr.appendChild(tdReq);
 
       var tdA = el("td", "num", fmtMoney(r.amountCents));
@@ -78,6 +87,9 @@
       }
       tr.appendChild(tdT);
 
+      tr.appendChild(el("td", null, r.protocol));
+      tr.appendChild(el("td", null, r.chain));
+
       body.appendChild(tr);
     });
 
@@ -92,6 +104,8 @@
       totalsRow.appendChild(el("td", "num", fmtMoney(t.amountCents)));
       totalsRow.appendChild(el("td", "num", fmtMoney(t.feeCents)));
       totalsRow.appendChild(el("td", null, "all Settled"));
+      totalsRow.appendChild(el("td", null, "—"));
+      totalsRow.appendChild(el("td", null, (t.protocols || []).join(", ")));
       totalsRow.appendChild(el("td", null, (t.chains || []).join(", ")));
 
       body.appendChild(totalsRow);
@@ -108,6 +122,7 @@
       if (data.totals) {
         setText("stat-payments", String(data.totals.count));
         setText("stat-vendors", String(data.totals.vendors));
+        setText("stat-protocols", String((data.totals.protocols || []).length));
         setText("stat-chains", (data.totals.chains || []).join(" + "));
       }
     }
