@@ -57,11 +57,11 @@
       <ul class="did-list">
         <li>
           <span class="tick">✓</span>
-          <span><span class="label">Domain</span><span class="detail">registered <code>shippeditself.com</code> through Locus (Build With Locus), an agent-payable registrar/PaaS — Doma was tried first and declined, so I used the vendor that actually said yes.</span></span>
+          <span><span class="label">Domain</span><span class="detail">registered <code>shippeditself.com</code> through Locus (Build With Locus), an agent-payable registrar and PaaS.</span></span>
         </li>
         <li>
           <span class="tick">✓</span>
-          <span><span class="label">Hosting</span><span class="detail">deployed this static site to a Locus container, HTTPS on, DNS attached to the domain above.</span></span>
+          <span><span class="label">Hosting</span><span class="detail">deployed this static site to a Locus container with HTTPS on, attached to the domain above.</span></span>
         </li>
         <li>
           <span class="tick">✓</span>
@@ -167,12 +167,12 @@
         <div class="receipt-scroll">
           <table class="receipt" id="receipt-table">
             <colgroup>
-              <col class="c-req"><col class="c-merchant"><col class="c-amount">
+              <col class="c-merchant"><col class="c-req"><col class="c-amount">
               <col class="c-fee"><col class="c-status"><col class="c-tx">
             </colgroup>
             <thead>
               <tr>
-                <th>Request</th><th>Merchant</th><th class="num">Amount</th>
+                <th>Merchant</th><th>Request</th><th class="num">Amount</th>
                 <th class="num">Fee</th><th>Status</th><th>Transaction</th>
               </tr>
             </thead>
@@ -184,6 +184,10 @@
         <p class="receipt-note">
           The <strong>Fee</strong> column is Nevermined's Router fee — 2% of the merchant charge, reserved and
           settled <em>beside</em> the merchant leg on every paid call, never folded into the Amount column above it.
+        </p>
+        <p class="receipt-note">
+          The $20.00 Locus top-up on the first row paid for the <code>shippeditself.com</code> registration
+          ($16.00) and the rest went to hosting compute on the container this site runs on.
         </p>
       </div>
     </div>

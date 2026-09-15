@@ -338,36 +338,34 @@ h2 {
 }
 .receipt-scroll { overflow-x: auto; }
 table.receipt {
-  width: 100%;
-  min-width: 720px;
   border-collapse: collapse;
   font-family: var(--mono);
-  font-size: 12.6px;
+  font-size: 11px;
   font-variant-numeric: tabular-nums;
   table-layout: fixed;
 }
 table.receipt th, table.receipt td {
-  padding: 9px 10px;
+  padding: 7px 6px;
   text-align: left;
   border-bottom: 1px dashed var(--line-strong);
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 table.receipt th {
-  font-size: 10.5px;
+  font-size: 10px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ink-faint);
   font-weight: 600;
   border-bottom: 1px solid var(--line-strong);
 }
-table.receipt col.c-req { width: 19%; }
-table.receipt col.c-merchant { width: 13%; }
-table.receipt col.c-amount { width: 11%; }
-table.receipt col.c-fee { width: 10%; }
-table.receipt col.c-status { width: 13%; }
-table.receipt col.c-tx { width: 34%; }
+/* widths in ch (character units) so every full requestId, merchant name and
+   amount fits with no clipping, regardless of which monospace font resolves */
+table.receipt col.c-merchant { width: 25ch; }
+table.receipt col.c-req { width: 22ch; }
+table.receipt col.c-amount { width: 9ch; }
+table.receipt col.c-fee { width: 8ch; }
+table.receipt col.c-status { width: 12ch; }
+table.receipt col.c-tx { width: 20ch; }
 table.receipt td.num { text-align: right; }
 table.receipt tr.totals td {
   border-top: 1.5px solid var(--ink);
@@ -501,7 +499,6 @@ footer a:hover { color: var(--accent); }
   .hero { padding: 44px 0 40px; }
   section { padding: 40px 0; }
   .topnav { display: none; }
-  table.receipt { min-width: 620px; font-size: 11.5px; }
   .diagram-wrap svg { min-width: 460px; }
   .stat-row { grid-template-columns: repeat(2, 1fr); }
   .stat { padding: 16px 12px; }

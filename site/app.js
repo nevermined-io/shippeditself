@@ -43,13 +43,13 @@
     rows.forEach(function (r) {
       var tr = document.createElement("tr");
 
-      var tdReq = el("td", null, r.requestId);
-      tdReq.title = r.requestId;
-      tr.appendChild(tdReq);
-
       var tdM = el("td", null, r.merchant);
       tdM.title = r.merchant;
       tr.appendChild(tdM);
+
+      var tdReq = el("td", null, r.requestId);
+      tdReq.title = r.requestId;
+      tr.appendChild(tdReq);
 
       var tdA = el("td", "num", fmtMoney(r.amountCents));
       tr.appendChild(tdA);
@@ -87,8 +87,8 @@
       totalsRow.className = "totals";
 
       var c0 = el("td", "totals-label", t.count + " payments · " + t.vendors + " vendors");
+      c0.colSpan = 2;
       totalsRow.appendChild(c0);
-      totalsRow.appendChild(el("td", null, ""));
       totalsRow.appendChild(el("td", "num", fmtMoney(t.amountCents)));
       totalsRow.appendChild(el("td", "num", fmtMoney(t.feeCents)));
       totalsRow.appendChild(el("td", null, "all Settled"));
