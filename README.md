@@ -41,4 +41,4 @@ Full mechanics, the real numbers for this run, and a diagram are on the [site it
    `/plugin install nevermined-router@nevermined`.
 5. Tell your agent what to buy and what it's allowed to spend.
 
-See the tutorial repo: [nevermined-io/outcome-ship-a-website](https://github.com/nevermined-io/outcome-ship-a-website).
+See the tutorial: [tutorials.nevermined.app/t/ship-a-website](https://tutorials.nevermined.app/t/ship-a-website) (source in [nevermined-io/tutorials](https://github.com/nevermined-io/tutorials/tree/main/catalog/ship-a-website)). Watch the run: [youtu.be/Wg-7go30WRs](https://youtu.be/Wg-7go30WRs).
